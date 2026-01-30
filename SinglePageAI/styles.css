@@ -1,0 +1,64 @@
+/* style.css */
+
+/* Web font + background colour and image */
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background-color: #f0f4ff;
+    background-image: url("https://picsum.photos/seed/artvista/1400/900");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* Type selector example */
+h2 {
+    color: #1b1b1b;
+}
+
+/* Class selector example */
+.main-section {
+    background: rgba(255, 255, 255, 0.88);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+/* ID selector example */
+#footerArea {
+    background: rgba(0, 0, 0, 0.04);
+    border-radius: 10px;
+}
+
+/* Pseudo classes for navbar links */
+.nav-link:hover {
+    text-decoration: underline;
+    color: darkblue;
+}
+
+.nav-link:active {
+    color: red;
+}
+
+.nav-link:visited {
+    color: purple;
+}
+
+/* Creativity: simple hover effect on images */
+.gallery-img:hover {
+    transform: scale(1.03);
+    transition: 0.3s;
+}
+
+/* Responsive design media query */
+@media screen and (max-width: 600px) {
+    body {
+        background-attachment: scroll;
+    }
+
+    .main-section {
+        padding: 12px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+}

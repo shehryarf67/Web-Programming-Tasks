@@ -1,0 +1,60 @@
+
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background-color: #f7f7ff;
+    background-image: url("https://picsum.photos/seed/gallerybg/1200/800");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+h2 {
+    font-weight: 600;
+    color: #1b1b1b;
+}
+
+.main-section {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#footerArea {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+
+.gallery-img {
+    border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+    color: darkblue;
+}
+
+.nav-link:active {
+    color: red;
+}
+
+.nav-link:visited {
+    color: purple;
+}
+
+.gallery-img:hover {
+    transform: scale(1.03);
+    transition: 0.3s;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        background-attachment: scroll;
+    }
+
+    .main-section {
+        padding: 12px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+}
