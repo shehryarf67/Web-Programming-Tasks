@@ -1,0 +1,82 @@
+body{
+  font-family: Arial, sans-serif;
+  text-align: centre;
+  background: #111;
+  color: white;
+}
+
+h2{
+  margin-top: 16px;
+}
+
+.hud{
+  display: flex;
+  gap: 14px;
+  justify-content: centre;
+  align-items: centre;
+  margin-bottom: 10px;
+}
+
+button{
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+#gameArea{
+  width: 800px;
+  height: 400px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid white;
+  user-select: none;
+}
+
+#bg{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 800px;
+  height: 400px;
+  object-fit: cover;
+}
+
+#bow{
+  position: absolute;
+  left: 20px;
+  top: 140px;
+  width: 90px;
+  height: auto;
+}
+
+#arrow{
+  position: absolute;
+  left: 110px;
+  top: 190px;
+  width: 80px;
+  height: auto;
+}
+
+#target{
+  position: absolute;
+  left: 650px;
+  top: 140px;
+  width: 80px;
+  height: 80px;
+}
+
+#message{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 10px;
+  text-align: centre;
+  font-weight: bold;
+  background: rgba(0,0,0,0.5);
+  padding: 6px;
+}
+
+.hint{
+  opacity: 0.9;
+  margin-top: 10px;
+}

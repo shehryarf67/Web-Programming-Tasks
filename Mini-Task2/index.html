@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Move Ball</title>
+    <style>
+        #box {
+            width: 500px;
+            height: 100px;
+            border: 3px solid #000;
+            position: relative;
+            margin: 15px 0
+        }
+
+        #ball {
+            width: 40px;
+            height: 40px;
+            background: #05f;
+            position: absolute;
+            left: 10px;
+            top: 30px;
+            transition: width 2s
+        }
+
+        #ball:hover {
+            width: 100px;
+            background: orange
+        }
+
+        .pulse {
+            animation: pulse .6s
+        }
+
+        @keyframes pulse {
+            0% {
+                background: #05f
+            }
+
+            50% {
+                background: orange
+            }
+
+            100% {
+                background: #05f
+            }
+        }
+
+        button {
+            margin: 5px;
+            padding: 8px 12px
+        }
+    </style>
+</head>
+
+<body>
+
+    <button onclick="move()">Move</button>
+    <button onclick="speed=Math.max(5,speed-5);show()">- Speed</button>
+    <button onclick="speed=Math.min(50,speed+5);show()">+ Speed</button>
+    <div id="spd"></div>
+
+    <div id="box">
+        <div id="ball"></div>
+    </div>
+
+    <script>
+        let x = 10, dir = 1, speed = 20;
+        const ball = document.getElementById("ball"), spd = document.getElementById("spd");
+        const maxX = 500 - 40; 
+
+        function move() {
+            x += dir * speed;
+            if (x <= 0) { x = 0; dir = 1; }
+            if (x >= maxX) { x = maxX; dir = -1; }
+            ball.style.left = x + "px";
+            ball.classList.add("pulse");
+            setTimeout(() => ball.classList.remove("pulse"), 600);
+        }
+        function show() { spd.textContent = "Speed: " + speed + " px/click"; }
+        show();
+    </script>
+
+</body>
+
+</html>
