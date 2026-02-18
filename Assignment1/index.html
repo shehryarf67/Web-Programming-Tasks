@@ -1,0 +1,93 @@
+<!--
+This HTML file creates the structure of the photo editor webpage. 
+It has a left panel that contains the filter buttons, the slider, rotate and flip buttons, 
+undo/redo buttons, and a history section. On the right side, it contains the canvas where the 
+selected image is shown and edited. At the bottom, it has buttons to choose an image from the 
+computer and save the edited image. This file mainly provides the layout and connects 
+the CSS for styling and the JavaScript for the editor’s functions.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Photo Editor</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- LEFT SIDE -->
+    <div class="left">
+
+      <div class="card">
+
+        <p class="card-title">Filters</p>
+
+        <div class="filter-grid">
+          <button class="fbtn active" data-filter="brightness">Brightness</button>
+          <button class="fbtn" data-filter="saturation">Saturation</button>
+          <button class="fbtn" data-filter="inversion">Inversion</button>
+          <button class="fbtn" data-filter="grayscale">Grayscale</button>
+
+          <!-- extra filters -->
+          <button class="fbtn" data-filter="sepia">Sepia</button>
+          <button class="fbtn" data-filter="blur">Blur</button>
+          <button class="fbtn" data-filter="rotate">Rotate</button>
+        </div>
+
+        <div class="slider-area">
+          <div class="slider-top">
+            <span id="filterName">Brightness</span>
+            <span id="filterValue">100%</span>
+          </div>
+          <input id="filterSlider" type="range" />
+        </div>
+
+        <p class="card-title" style="margin-top:14px;">Rotate &amp; Flip</p>
+
+        <div class="icon-row">
+          <button id="rotLeft" class="icon-btn" title="Rotate Left">⟲</button>
+          <button id="rotRight" class="icon-btn" title="Rotate Right">⟳</button>
+          <button id="flipH" class="icon-btn" title="Flip Horizontal">⇋</button>
+          <button id="flipV" class="icon-btn" title="Flip Vertical">⇅</button>
+        </div>
+
+        <!-- PART B buttons (kept, just styled small) -->
+        <div class="small-actions">
+          <button id="undoBtn" class="small-btn" disabled>Undo</button>
+          <button id="redoBtn" class="small-btn" disabled>Redo</button>
+        </div>
+
+        <!-- PART B history (kept, just styled to not ruin layout) -->
+        <div class="history-box">
+          <p class="history-title">History</p>
+          <div id="historyPanel" class="history-panel"></div>
+        </div>
+
+      </div>
+
+      <button id="resetBtn" class="reset-btn">RESET FILTERS</button>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="right">
+      <div class="preview-box">
+        <canvas id="canvas"></canvas>
+        <p id="hintText" class="hint">Choose an image to start.</p>
+      </div>
+
+      <div class="bottom-buttons">
+        <input id="fileInput" type="file" accept="image/*" hidden />
+        <button id="chooseBtn" class="choose-btn">CHOOSE IMAGE</button>
+        <button id="saveBtn" class="save-btn" disabled>SAVE IMAGE</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

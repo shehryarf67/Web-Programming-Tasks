@@ -1,6 +1,6 @@
 body{
   font-family: Arial, sans-serif;
-  text-align: centre;
+  text-align: center;
   background: #111;
   color: white;
 }
@@ -12,8 +12,8 @@ h2{
 .hud{
   display: flex;
   gap: 14px;
-  justify-content: centre;
-  align-items: centre;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 10px;
 }
 
@@ -70,7 +70,7 @@ button{
   left: 0;
   right: 0;
   top: 10px;
-  text-align: centre;
+  text-align: center;
   font-weight: bold;
   background: rgba(0,0,0,0.5);
   padding: 6px;

@@ -1,0 +1,244 @@
+/*
+This CSS file styles the photo editor interface to match the required frontend layout. 
+It uses flex layout to place the control panel on the left and the image preview on the right. 
+It also styles the buttons, slider, history panel, and the bottom action buttons so they 
+look clean and organised. The CSS includes responsive rules so the layout becomes stacked 
+on small screens. This file only changes how the page looks, not how the editor works.
+*/
+
+*{
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body{
+  margin: 0;
+  background: #ffffff;
+}
+
+.app{
+  max-width: 1050px;
+  margin: 40px auto;
+  padding: 0 18px;
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+}
+
+.left{
+  width: 280px;
+}
+
+.card{
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  padding: 14px;
+  background: #fff;
+}
+
+.card-title{
+  margin: 0 0 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #444;
+}
+
+.filter-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.fbtn{
+  padding: 10px 8px;
+  font-size: 12px;
+  border-radius: 3px;
+  border: 1px solid #d6d6d6;
+  background: #f8f8f8;
+  cursor: pointer;
+  color: #444;
+}
+
+.fbtn.active{
+  background: #4a74ff;
+  border-color: #4a74ff;
+  color: #fff;
+}
+
+.slider-area{
+  margin-top: 6px;
+}
+
+.slider-top{
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+#filterSlider{
+  width: 100%;
+  accent-color: #4a74ff; 
+}
+
+.icon-row{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.icon-btn{
+  height: 36px;
+  border: 1px solid #d6d6d6;
+  background: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+}
+
+.small-actions{
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.small-btn{
+  flex: 1;
+  padding: 9px 8px;
+  border: 1px solid #d6d6d6;
+  background: #f8f8f8;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.small-btn:disabled{
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.history-box{
+  margin-top: 12px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+.history-title{
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #555;
+}
+
+.history-panel{
+  max-height: 140px;
+  overflow-y: auto;
+  border: 1px solid #eee;
+  background: #fafafa;
+  padding: 8px;
+  border-radius: 3px;
+}
+
+.history-item{
+  width: 100%;
+  text-align: left;
+  padding: 8px;
+  margin-bottom: 6px;
+  border: 1px solid #d6d6d6;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+.history-item.active{
+  border-color: #4a74ff;
+  background: #eef3ff;
+}
+
+.reset-btn{
+  margin-top: 16px;
+  width: 100%;
+  padding: 12px 10px;
+  border: 1px solid #cfcfcf;
+  background: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  color: #666;
+}
+
+.right{
+  flex: 1;
+}
+
+.preview-box{
+  position: relative;
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+canvas{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hint{
+  position: absolute;
+  color: #777;
+  font-size: 14px;
+}
+
+.bottom-buttons{
+  margin-top: 18px;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.choose-btn{
+  padding: 12px 18px;
+  border: 1px solid #7a7a7a;
+  background: #6f6f6f;
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.save-btn{
+  padding: 12px 18px;
+  border: 1px solid #4a74ff;
+  background: #4a74ff;
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.save-btn:disabled{
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 900px){
+  .app{
+    flex-direction: column;
+  }
+  .left{
+    width: 100%;
+  }
+  .bottom-buttons{
+    justify-content: center;
+  }
+}

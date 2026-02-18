@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple To-Do List</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <h2>My To-Do List</h2>
+    <input type="text" id="todoInput" placeholder="Enter a task">
+    <button id="addBtn">Add</button>
+
+    <br>
+
+    <ul id="todoList"></ul>
+
+    <button id="deleteBtn">Delete Selected</button>
+
+    <script>
+        $(document).ready(function () {
+            $('#addBtn').click(function () {
+                var input = $('#todoInput').val();
+                if (input) {
+                    $("#todoList").append('<li>' + '<input type="checkbox"> ' + input + '</li>');
+                    $('#todoInput').val('');
+                }
+                $('#deleteBtn').click(function () {
+                    $("#todoList input:checked").parent().remove();
+                });
+            })
+        });
+    </script>
+
+</body>
+
+</html>
