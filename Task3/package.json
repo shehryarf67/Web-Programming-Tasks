@@ -1,0 +1,20 @@
+{
+  "name": "login-system",
+  "version": "1.0.0",
+  "description": "Login system using Express.js, MongoDB, Mongoose, sessions, and JavaScript class",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "mongoose": "^8.9.5"
+  }
+}
