@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -8,5 +8,11 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {
-  title = 'routing-task';
+  protected readonly title = signal('my-angular2');
+  message: string = "Hello from Parent Component!";
+  
+  student = {
+    name: "Shehryar",
+    rollNo: 604
+  };
 }
